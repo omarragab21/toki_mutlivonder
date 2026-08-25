@@ -2,59 +2,37 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
-    {
-      "src": "^/$",
-      "dest": "/Toki/index.html"
-    },
-    {
-      "src": "^/en/?$",
-      "dest": "/Toki/index_en.html"
-    },
-    {
-      "src": "^/ar/?$",
-      "dest": "/Toki/index.html"
-    },
-    {
-      "src": "^/category/?$",
-      "dest": "/Toki/category.html"
-    },
-    {
-      "src": "^/category_en/?$",
-      "dest": "/Toki/category_en.html"
-    },
-    {
-      "src": "^/product/?$",
-      "dest": "/Toki/product_details.html"
-    },
-    {
-      "src": "^/product_en/?$",
-      "dest": "/Toki/product_details_en.html"
-    },
-    {
-      "src": "^/css/(.*)",
-      "dest": "/Toki/css/$1"
-    },
-    {
-      "src": "^/js/(.*)",
-      "dest": "/Toki/js/$1"
-    },
-    {
-      "src": "^/img/(.*)",
-      "dest": "/Toki/img/$1"
-    },
-    {
-      "src": "^/fonts/(.*)",
-      "dest": "/Toki/fonts/$1"
-    },
-    {
-      "src": "^/Toki/(.*)",
-      "dest": "/Toki/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/Toki/$1"
-    }
+  "rewrites": [
+    { "source": "/", "destination": "/Toki/index.html" },
+    { "source": "/index", "destination": "/Toki/index.html" },
+    { "source": "/index.html", "destination": "/Toki/index.html" },
+    { "source": "/ar", "destination": "/Toki/index.html" },
+    { "source": "/ar/:path*", "destination": "/Toki/index.html" },
+    { "source": "/en", "destination": "/Toki/index_en.html" },
+    { "source": "/en/:path*", "destination": "/Toki/index_en.html" },
+    { "source": "/index_en", "destination": "/Toki/index_en.html" },
+    { "source": "/index_en.html", "destination": "/Toki/index_en.html" },
+    { "source": "/category", "destination": "/Toki/category.html" },
+    { "source": "/category.html", "destination": "/Toki/category.html" },
+    { "source": "/category_en", "destination": "/Toki/category_en.html" },
+    { "source": "/category_en.html", "destination": "/Toki/category_en.html" },
+    { "source": "/products", "destination": "/Toki/category.html" },
+    { "source": "/products.html", "destination": "/Toki/category.html" },
+    { "source": "/products_en", "destination": "/Toki/category_en.html" },
+    { "source": "/products_en.html", "destination": "/Toki/category_en.html" },
+    { "source": "/product", "destination": "/Toki/product_details.html" },
+    { "source": "/product.html", "destination": "/Toki/product_details.html" },
+    { "source": "/product_details", "destination": "/Toki/product_details.html" },
+    { "source": "/product_details.html", "destination": "/Toki/product_details.html" },
+    { "source": "/product_en", "destination": "/Toki/product_details_en.html" },
+    { "source": "/product_en.html", "destination": "/Toki/product_details_en.html" },
+    { "source": "/product_details_en", "destination": "/Toki/product_details_en.html" },
+    { "source": "/product_details_en.html", "destination": "/Toki/product_details_en.html" },
+    { "source": "/css/:path*", "destination": "/Toki/css/:path*" },
+    { "source": "/js/:path*", "destination": "/Toki/js/:path*" },
+    { "source": "/img/:path*", "destination": "/Toki/img/:path*" },
+    { "source": "/fonts/:path*", "destination": "/Toki/fonts/:path*" },
+    { "source": "/:path((?!Toki/).*)", "destination": "/Toki/:path" }
   ],
   "headers": [
     {

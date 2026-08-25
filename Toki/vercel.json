@@ -2,6 +2,20 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/products", "destination": "/category.html" },
+    { "source": "/products.html", "destination": "/category.html" },
+    { "source": "/products_en", "destination": "/category_en.html" },
+    { "source": "/products_en.html", "destination": "/category_en.html" },
+    { "source": "/product", "destination": "/product_details.html" },
+    { "source": "/product.html", "destination": "/product_details.html" },
+    { "source": "/product_en", "destination": "/product_details_en.html" },
+    { "source": "/product_en.html", "destination": "/product_details_en.html" },
+    { "source": "/product_details", "destination": "/product_details.html" },
+    { "source": "/product_details_en", "destination": "/product_details_en.html" },
+    { "source": "/category", "destination": "/category.html" },
+    { "source": "/category_en", "destination": "/category_en.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
