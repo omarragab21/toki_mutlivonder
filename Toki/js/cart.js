@@ -1,8 +1,20 @@
-// Toki Shopping Cart Engine & Drawer Manager
+// Toki Shopping Cart Engine & Drawer Manager with Auth Gate
 (function() {
     'use strict';
 
     var STORAGE_KEY = 'toki_cart';
+
+    // Check if user is logged in
+    function isUserLoggedIn() {
+        try {
+            var raw = localStorage.getItem('toki_user');
+            if (raw) {
+                var user = JSON.parse(raw);
+                return user && user.loggedIn === true;
+            }
+        } catch(e) {}
+        return false;
+    }
 
     // Get current cart
     function getCart() {
@@ -59,6 +71,61 @@
         return document.documentElement.lang === 'ar' || !document.documentElement.lang;
     }
 
+    // Inject Auth Required Modal
+    function ensureAuthModal() {
+        if ($('.toki-auth-modal-overlay').length) return;
+
+        var ar = isArabic();
+        var currentUrl = encodeURIComponent(window.location.href);
+        var loginUrl = (ar ? 'login.html' : 'login_en.html') + '?redirect=' + currentUrl;
+        var signupUrl = (ar ? 'signup.html' : 'signup_en.html') + '?redirect=' + currentUrl;
+
+        var html = 
+            '<div class="toki-auth-modal-overlay" id="tokiAuthModalOverlay">' +
+                '<div class="toki-auth-modal">' +
+                    '<div class="toki-auth-icon-wrap">' +
+                        '<i class="fa-solid fa-lock"></i>' +
+                    '</div>' +
+                    '<h3>' + (ar ? 'تسجيل الدخول مطلوب' : 'Sign In Required') + '</h3>' +
+                    '<p>' + 
+                        (ar ? 
+                         'يرجى تسجيل الدخول أولاً أو إنشاء حساب جديد لتتمكن من إضافة المنتجات إلى عربة التسوق ومتابعة الشراء.' : 
+                         'Please sign in or create an account first to add items to your cart and proceed to checkout.') + 
+                    '</p>' +
+                    '<div class="toki-auth-modal-actions">' +
+                        '<a href="' + loginUrl + '" class="btn-auth-modal-login">' +
+                            '<i class="fa-solid fa-arrow-right-to-bracket ml-2"></i> ' +
+                            (ar ? 'تسجيل الدخول الآن' : 'Sign In Now') +
+                        '</a>' +
+                        '<a href="' + signupUrl + '" class="btn-auth-modal-signup">' +
+                            '<i class="fa-solid fa-user-plus ml-2"></i> ' +
+                            (ar ? 'إنشاء حساب جديد' : 'Create New Account') +
+                        '</a>' +
+                        '<button type="button" class="btn-auth-modal-cancel" onclick="window.tokiCart.closeAuthModal()">' +
+                            (ar ? 'إلغاء ومتابعة التصفح' : 'Cancel and Continue Browsing') +
+                        '</button>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+
+        $('body').append(html);
+    }
+
+    function showAuthModal() {
+        ensureAuthModal();
+        var ar = isArabic();
+        var currentUrl = encodeURIComponent(window.location.href);
+        $('#tokiAuthModalOverlay .btn-auth-modal-login').attr('href', (ar ? 'login.html' : 'login_en.html') + '?redirect=' + currentUrl);
+        $('#tokiAuthModalOverlay .btn-auth-modal-signup').attr('href', (ar ? 'signup.html' : 'signup_en.html') + '?redirect=' + currentUrl);
+        $('#tokiAuthModalOverlay').addClass('active');
+        $('body').css('overflow', 'hidden');
+    }
+
+    function closeAuthModal() {
+        $('#tokiAuthModalOverlay').removeClass('active');
+        $('body').css('overflow', '');
+    }
+
     // Inject Drawer Markup if needed
     function ensureDrawerMarkup() {
         if ($('.toki-cart-drawer').length) return;
@@ -86,6 +153,7 @@
             '</div>';
 
         $('body').append(html);
+        ensureAuthModal();
     }
 
     // Render Drawer Content
@@ -113,8 +181,7 @@
         }
 
         var itemsHtml = '';
-        items.forEach(function(item, idx) {
-            var itemTotal = (parseFloat(item.price) * (item.qty || 1)).toFixed(2);
+        items.forEach(function(item) {
             itemsHtml += 
                 '<div class="toki-cart-item" data-id="' + item.id + '">' +
                     '<img src="' + (item.img || 'img/p-1.png') + '" alt="" class="toki-cart-item-img">' +
@@ -153,7 +220,7 @@
                 '<span>' + (ar ? 'الإجمالي' : 'Total') + '</span>' +
                 '<span class="price">' + subtotal + ' ' + currency + '</span>' +
             '</div>' +
-            '<a href="' + (ar ? 'cart.html' : 'cart_en.html') + '" class="btn-toki-checkout">' +
+            '<a href="' + (ar ? 'cart.html' : 'cart_en.html') + '" class="btn-toki-checkout" id="tokiDrawerCheckoutBtn">' +
                 '<i class="fa-solid fa-credit-card"></i> ' +
                 (ar ? 'متابعة الدفع والشراء' : 'Proceed to Checkout') +
             '</a>'
@@ -186,8 +253,14 @@
         }, 2500);
     }
 
-    // Add Item
+    // Add Item with Auth Check
     function addToCart(item) {
+        // Gate: user must be logged in first!
+        if (!isUserLoggedIn()) {
+            showAuthModal();
+            return false;
+        }
+
         var items = getCart();
         var existing = items.find(function(i) { return i.id === item.id; });
         if (existing) {
@@ -204,6 +277,7 @@
         saveCart(items);
         showToast();
         openCart();
+        return true;
     }
 
     // Remove Item
@@ -234,7 +308,10 @@
         open: openCart,
         close: closeCart,
         updateBadges: updateBadges,
-        clear: function() { saveCart([]); }
+        clear: function() { saveCart([]); },
+        isLoggedIn: isUserLoggedIn,
+        showAuthModal: showAuthModal,
+        closeAuthModal: closeAuthModal
     };
 
     // Event Handlers
@@ -254,21 +331,11 @@
             closeCart();
         });
 
-        // Add to Cart on Product Details Page
-        $(document).on('click', '.second__cart__btn', function(e) {
-            e.preventDefault();
-            var title = $('.product__details__content h3, .product__details__content .main-title').first().text().trim() || 'أبل ساعة سيريس 7 مم مزودة بنظام المواعيد وضد الماء';
-            var priceText = $('.product__details__content .new__price').first().text().replace(/[^\d.]/g, '') || '1754';
-            var qty = parseInt($('.number__spinner input').val()) || 1;
-            var img = $('.product__slider__main img, .pro__details__slider img').first().attr('src') || 'img/p-1.png';
-
-            addToCart({
-                id: 'apple_watch_7',
-                title: title,
-                price: parseFloat(priceText) || 1754,
-                qty: qty,
-                img: img
-            });
+        // Close Auth Modal on backdrop click
+        $(document).on('click', '#tokiAuthModalOverlay', function(e) {
+            if (e.target.id === 'tokiAuthModalOverlay') {
+                closeAuthModal();
+            }
         });
     });
 

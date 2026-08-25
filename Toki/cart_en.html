@@ -222,6 +222,10 @@
         }
 
         function handleCheckout() {
+            if (!window.tokiCart.isLoggedIn()) {
+                window.tokiCart.showAuthModal();
+                return;
+            }
             var items = window.tokiCart.get();
             if (items.length === 0) {
                 alert('Your cart is empty!');

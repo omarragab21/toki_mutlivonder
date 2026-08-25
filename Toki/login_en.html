@@ -308,6 +308,17 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+        function getRedirectUrl(defTarget) {
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var red = params.get('redirect');
+                if (red && red.trim() !== '') {
+                    return decodeURIComponent(red);
+                }
+            } catch(e) {}
+            return defTarget;
+        }
+    
         let currentRole = 'customer';
 
         function setRole(role, btn) {
@@ -342,7 +353,7 @@
                     loginTime: new Date().toISOString()
                 };
                 localStorage.setItem('toki_user', JSON.stringify(user));
-                window.location.href = 'index_en.html';
+                window.location.href = getRedirectUrl("index_en.html");
             }, 600);
         }
 
@@ -355,7 +366,7 @@
                 loginTime: new Date().toISOString()
             };
             localStorage.setItem('toki_user', JSON.stringify(user));
-            window.location.href = 'index_en.html';
+            window.location.href = getRedirectUrl("index_en.html");
         }
     </script>
     <script src="js/cart.js"></script>
