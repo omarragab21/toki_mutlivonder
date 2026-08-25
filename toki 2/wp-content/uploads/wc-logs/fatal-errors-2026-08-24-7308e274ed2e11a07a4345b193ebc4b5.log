@@ -1,0 +1,54 @@
+2026-08-24T13:29:12+00:00 CRITICAL Uncaught DivisionByZeroError: Division by zero in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php:1035
+Stack trace:
+#0 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-includes/template-loader.php(132): include()
+#1 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-blog-header.php(19): require_once('/Users/omarraga...')
+#2 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/index.php(17): require('/Users/omarraga...')
+#3 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/router.php(29): require_once('/Users/omarraga...')
+#4 {main}
+  thrown in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php on line 1035
+
+2026-08-24T13:29:12+00:00 CRITICAL Uncaught DivisionByZeroError: Division by zero in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php:1035
+Stack trace:
+#0 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-includes/template-loader.php(132): include()
+#1 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-blog-header.php(19): require_once('/Users/omarraga...')
+#2 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/index.php(17): require('/Users/omarraga...')
+#3 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/router.php(29): require_once('/Users/omarraga...')
+#4 {main}
+  thrown in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php on line 1035
+
+2026-08-24T13:29:14+00:00 CRITICAL Uncaught DivisionByZeroError: Division by zero in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php:1035
+Stack trace:
+#0 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-includes/template-loader.php(132): include()
+#1 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-blog-header.php(19): require_once('/Users/omarraga...')
+#2 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/index.php(17): require('/Users/omarraga...')
+#3 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/router.php(29): require_once('/Users/omarraga...')
+#4 {main}
+  thrown in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php on line 1035
+
+2026-08-24T13:29:14+00:00 CRITICAL Uncaught DivisionByZeroError: Division by zero in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php:1035
+Stack trace:
+#0 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-includes/template-loader.php(132): include()
+#1 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-blog-header.php(19): require_once('/Users/omarraga...')
+#2 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/index.php(17): require('/Users/omarraga...')
+#3 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/router.php(29): require_once('/Users/omarraga...')
+#4 {main}
+  thrown in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php on line 1035
+
+2026-08-24T13:29:46+00:00 CRITICAL Uncaught DivisionByZeroError: Division by zero in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php:1035
+Stack trace:
+#0 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-includes/template-loader.php(132): include()
+#1 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-blog-header.php(19): require_once('/Users/omarraga...')
+#2 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/index.php(17): require('/Users/omarraga...')
+#3 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/router.php(29): require_once('/Users/omarraga...')
+#4 {main}
+  thrown in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php on line 1035
+
+2026-08-24T13:29:52+00:00 CRITICAL Uncaught DivisionByZeroError: Division by zero in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php:1035
+Stack trace:
+#0 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-includes/template-loader.php(132): include()
+#1 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-blog-header.php(19): require_once('/Users/omarraga...')
+#2 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/index.php(17): require('/Users/omarraga...')
+#3 /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/router.php(29): require_once('/Users/omarraga...')
+#4 {main}
+  thrown in /Users/omarragab/Downloads/مشروع توكي شحن و مرسول ومتجر شبيه بنون/store-multivendor/toki 2/wp-content/themes/toki/index.php on line 1035
+

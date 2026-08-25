@@ -1,0 +1,87 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    {
+      "src": "^/$",
+      "dest": "/Toki/index.html"
+    },
+    {
+      "src": "^/en/?$",
+      "dest": "/Toki/index_en.html"
+    },
+    {
+      "src": "^/ar/?$",
+      "dest": "/Toki/index.html"
+    },
+    {
+      "src": "^/category/?$",
+      "dest": "/Toki/category.html"
+    },
+    {
+      "src": "^/category_en/?$",
+      "dest": "/Toki/category_en.html"
+    },
+    {
+      "src": "^/product/?$",
+      "dest": "/Toki/product_details.html"
+    },
+    {
+      "src": "^/product_en/?$",
+      "dest": "/Toki/product_details_en.html"
+    },
+    {
+      "src": "^/css/(.*)",
+      "dest": "/Toki/css/$1"
+    },
+    {
+      "src": "^/js/(.*)",
+      "dest": "/Toki/js/$1"
+    },
+    {
+      "src": "^/img/(.*)",
+      "dest": "/Toki/img/$1"
+    },
+    {
+      "src": "^/fonts/(.*)",
+      "dest": "/Toki/fonts/$1"
+    },
+    {
+      "src": "^/Toki/(.*)",
+      "dest": "/Toki/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Toki/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js|img|fonts|Toki/css|Toki/js|Toki/img|Toki/fonts)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

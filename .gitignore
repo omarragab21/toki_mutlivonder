@@ -1,0 +1,28 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large Archives & Figma Files (Exceeds GitHub 100MB File Limit)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.fig
+
+# Vercel Cache & Build Artifacts
+.vercel
+.output
+
+# Node / Logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# WordPress uploads / cache (optional)
+# toki 2/wp-content/uploads/

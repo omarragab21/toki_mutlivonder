@@ -1,0 +1,114 @@
+body{
+  direction: rtl;
+  text-align: right !important;
+}
+.dropdown-menu{
+  text-align: right !important;
+}
+
+/*start header navbar */
+@media(max-width: 992px) {
+#burgerBtn {
+  left: 30px;
+}
+#burgerBtn:before {
+  left: -2px;
+}
+  #burgerBtn:after {
+    left: -2px;
+ }
+}
+
+@media(min-width: 992px) {
+ .navbar-expand-lg .navbar-nav .dropdown-menu {
+    right: 0;
+  }
+}
+/*page*/
+.lang-des .dropdown-menu{
+  left: 0;
+}
+
+
+.lang-des .lang-item img {
+  margin-left: 6px;
+}
+
+/*headerSearch*/
+
+#searchModal .close {
+  right: 20px;
+}
+
+.go-top {
+  right: 10px;
+}
+
+.follow__us::before {
+  right: 0;
+}
+
+
+.nice-select:after {
+  right: auto;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+}
+
+
+.add_to_fav {
+  left: 15px;
+}
+
+.share__product {
+  left: 15px;
+}
+
+.best__proo {
+  right: -7px;
+  background-image: url(../img/bk.png);
+}
+
+.best__proo::before {
+  right: 9px;
+}
+
+.tablet__offer {
+  left: 0;
+  background-image: url(../img/tb.png);
+}
+
+.all__cats::after {
+  left: -20px;
+}
+
+.sub__third__menu {
+  left: -100%;
+}
+
+.footer_menu li::marker {
+  content: "\f100";
+}
+
+.beauty__offer__card .offer__btn {
+  right: 30px;
+}
+
+.main__start__title {
+  background-position: right bottom;
+}
+
+.food__offer {
+  right: 0;
+  background-image: url(../img/tb3.png);
+}
+
+.breadcrumb-item+.breadcrumb-item {
+  padding-left: 0;
+  padding-right: 10px;
+}
+.breadcrumb-item+.breadcrumb-item::before {
+  padding-right: 0;
+  padding-left: 10px;
+}

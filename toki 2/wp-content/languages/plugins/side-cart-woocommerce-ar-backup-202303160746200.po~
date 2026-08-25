@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce Side Cart Premium\n"
+"POT-Creation-Date: 2020-09-26 02:49+0530\n"
+"PO-Revision-Date: 2023-03-16 07:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100 >= 3 "
+"&& n%100<=10 ? 3 : n%100 >= 11 && n%100<=99 ? 4 : 5;\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: ar\n"
+"X-Loco-Version: 2.6.3; wp-6.1.1"
+
+#: includes/class-xoo-wsc-cart.php:340
+#, php-format
+msgid "%s applied successfully"
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:41
+msgid "[Remove]"
+msgstr ""
+
+#: includes/xoo-wsc-functions.php:66
+msgid "Add"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:216
+msgid "Address updated"
+msgstr ""
+
+#: templates/global/footer/extras.php:40
+msgid "Apply"
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:24
+#: templates/global/slider/apply-coupon.php:78
+msgid "Apply Coupon"
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:61
+msgid "Available Coupons"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:415
+msgid "Calculate"
+msgstr ""
+
+#: templates/global/slider/calculate-shipping.php:24
+msgid "Calculate Shipping"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:349
+msgid "Coupon has been removed"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:456
+msgid "Discount"
+msgstr ""
+
+#: templates/xoo-wsc-body.php:30
+msgid "Empty Cart"
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:30
+msgid "Enter Promo Code"
+msgstr ""
+
+#: templates/global/slider/calculate-shipping.php:85
+msgid "Enter your address to view shipping options."
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:75
+#, php-format
+msgid "Get %s off"
+msgstr ""
+
+#: templates/global/footer/extras.php:45
+msgid "Have a Promo Code?"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:203
+msgid "Item added back"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:87
+msgid "Item added to cart"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:169
+msgid "Item removed"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:175
+msgid "Item updated"
+msgstr ""
+
+#: includes/class-xoo-wsc-frontend.php:116
+msgid "Only %s% in stock"
+msgstr ""
+
+#: includes/class-xoo-wsc-frontend.php:119
+msgid "Please enter promo code"
+msgstr ""
+
+#: includes/class-xoo-wsc-frontend.php:118
+msgid "Please use checkout form to calculate shipping"
+msgstr ""
+
+#: templates/global/body/product.php:62
+msgid "Price: "
+msgstr "السعر"
+
+#: templates/global/body/product.php:79
+msgid "Qty:"
+msgstr ""
+
+#: includes/class-xoo-wsc-frontend.php:117
+msgid "Quantity can only be purchased in multiple of %s%"
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:38
+msgid "Saved"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:383
+msgid "Shipping"
+msgstr "الشحن"
+
+#: includes/class-xoo-wsc-cart.php:405
+#: templates/global/slider/calculate-shipping.php:83
+msgid "Shipping costs are calculated during checkout."
+msgstr ""
+
+#: templates/global/slider/calculate-shipping.php:57
+msgid "Shipping options will be updated during checkout."
+msgstr ""
+
+#: templates/global/slider/calculate-shipping.php:54
+msgid "Shipping to:"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:111
+msgid "Shipping updated"
+msgstr ""
+
+#: templates/global/body/product.php:46
+msgid "shoppers have bought this"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:156
+msgid "Something went wrong"
+msgstr ""
+
+#: templates/global/slider/apply-coupon.php:31
+msgid "Submit"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:376
+msgid "Subtotal"
+msgstr "المجموع"
+
+#: includes/class-xoo-wsc-cart.php:444
+msgid "Tax"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:465
+msgid "Total"
+msgstr "الاجمالي النهائي"
+
+#: templates/global/slider/apply-coupon.php:61
+msgid "Unavailable Coupons"
+msgstr ""
+
+#: includes/class-xoo-wsc-cart.php:171
+msgid "Undo?"
+msgstr ""

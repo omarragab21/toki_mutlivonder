@@ -1,0 +1,268 @@
+
+html {
+  scroll-behavior: smooth;
+  
+}
+body{
+  font-family: 'URW DIN Arabic Medium', sans-serif;
+  overflow-x: hidden!important;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;;
+}
+*{
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+@font-face {
+  font-family: 'URW DIN Arabic Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('URW DIN Arabic Medium'), url('../fonts/URW DIN Arabic Medium.woff') format('woff');
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body.thin::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: #f6f6f6;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: #8b8b8b;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #8b8b8b;
+}
+
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1170px;
+  }
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn {
+  outline: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #FF5900;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button:focus,
+button:active,
+input:active,
+input:focus,
+select:active,
+select:focus,
+textarea:focus,
+textarea:active {
+  box-shadow: none;
+  outline: 0;
+}
+
+h1, h2, h3, h5, h5 {
+  text-transform: capitalize;
+}
+
+p{
+  color: #B2B2B2;
+}
+
+
+/*** toki steps new style ***/
+
+.tokiStepsWrapper {
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid #dcdcde;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+@media (min-width: 991px) {
+  .tokiStepsWrapper {
+    max-width: 800px;
+  }
+}
+.stepsLogo {
+  border-bottom: 1px solid #dcdcde;
+  padding: 7px 0;
+  background-color: #FF5900;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.st_logoLink {
+  display: block;
+  margin: auto;
+}
+.toki_setup_steps {
+  font-size: 14px;
+  padding-bottom: 24px;
+  margin: 0;
+  list-style: none outside;
+  overflow: hidden;
+  color: #222;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+@media (max-width: 400px) {
+  .toki_setup_steps {
+    display: none;
+  }
+}
+.toki_setup_steps li {
+  width: 100%;
+  padding: 2px;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 4px solid #ccc;
+}
+.toki_setup_steps li::before {
+      content: "";
+    border: 3px solid #ccc;
+    border-radius: 100%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    margin-left: -6px;
+    background-color: #fff;
+}
+.toki_setup_steps li.active {
+  border-color: #FF5900!important;
+}
+.toki_setup_steps li.active::before {
+  background-color: #17a2b8;
+  border-color: #FF5900!important;
+}
+.toki_setup_content {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 13%);
+  padding: 2em;
+  margin: 0 0 20px;
+  background: #fff;
+  overflow: hidden;
+}
+.toki_setup_content h1 {
+  color: #666;
+  margin-bottom: 20px;
+}
+.toki_setup_content p {
+  color:#999;
+  margin-bottom: 20px;
+}
+.toki_setup_actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#wcfm_membership_register_button,
+.toki_setup_actions .conirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FF5900 !important;
+  color: #fff!important;
+  border: none;
+  height: 48px;
+  width: 190px;
+  margin-inline-end: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.toki_setup_actions .notconirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2271b1 !important;
+  border: 1px solid #2271b1;
+  background: #f6f7f7 !important;
+  height: 48px;
+  width: 190px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+#wcfm_membership_container p.wcfm_title, #wcfm_membership_container span.wcfm_title {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 16px !important;
+}
+#wcfm_membership_container input[type="text"],
+#wcfm_membership_container input[type="file"],
+#wcfm_membership_container input[type="password"],
+#wcfm_membership_container select,
+#wcfm_membership_container input[type="number"],
+#wcfm_membership_container input[type="time"],
+#wcfm_membership_container input[type="search"],
+#wcfm_membership_container textarea {
+    margin-bottom: 26px;
+    padding: 12px 10px!important;
+    background-color: rgba(253, 101, 0, 0.07) !important;
+    border: 1px solid rgba(253, 101, 0, 0.4) !important;
+    border-radius: 5px !important;
+    height: 46px;
+    font-size: 14px;
+    width: 100% !important;
+}
+.wcfm_registration_form_heading {
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+#wcfm_membership_container input.wcfm_submit_button, #wcfm_membership_container a.wcfm_submit_button {
+    cursor: pointer;
+    font-size: 18px;
+}
+#wcfm-main-contentainer input#terms {
+    margin-right: 0 !important;
+    position: relative;
+    top: 10px;
+}
+@media (max-width: 991px) {
+    .tokiStepsWrapper {
+        margin-top: 20px;
+    }
+    .wcfm-membership-wrapper {
+        width: 100%;
+        margin: auto;
+    }
+    .toki_setup_content {
+        padding: 20px 0;
+    }
+}
+
