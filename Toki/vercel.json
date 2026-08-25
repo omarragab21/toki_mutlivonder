@@ -14,7 +14,13 @@
     { "source": "/signin", "destination": "/login.html" },
     { "source": "/register", "destination": "/signup.html" },
     { "source": "/signin_en", "destination": "/login_en.html" },
-    { "source": "/register_en", "destination": "/signup_en.html" }
+    { "source": "/register_en", "destination": "/signup_en.html" },
+    { "source": "/cart", "destination": "/cart.html" },
+    { "source": "/cart.html", "destination": "/cart.html" },
+    { "source": "/checkout", "destination": "/cart.html" },
+    { "source": "/cart_en", "destination": "/cart_en.html" },
+    { "source": "/cart_en.html", "destination": "/cart_en.html" },
+    { "source": "/checkout_en", "destination": "/cart_en.html" }
   ],
   "headers": [
     {

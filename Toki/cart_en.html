@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Toki Marketplace</title>
+    <link href="img/logo.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="css/animate.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/style-en.css" rel="stylesheet">
+    <link href="css/cart.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f7f8fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .cart-page-wrap {
+            padding: 40px 0 60px 0;
+        }
+        .cart-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid #ebebeb;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            margin-bottom: 24px;
+        }
+        .cart-page-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #222;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .summary-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid #ebebeb;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 20px;
+        }
+        .summary-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-logo"> 
+            <div class="headerSearch">
+                <div class="container px-lg-0">
+                    <div class="row align-items-center">
+                        <div class="col-3 col-lg-2">
+                            <a class="logo" href="index_en.html"><img src="img/logo.png" alt="Toki"></a>     
+                        </div>
+                        <div class="col-9 col-lg-6 col-xl-7 mob__jutify__between">
+                            <form action="" class="search-form" autocomplete="off">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                                    <button class="input-group-append search_btn" type="submit">
+                                        <i class="search__icon"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-4 col-xl-3 d-flex justify-content-between align-items-center px-lg-0 main_links_wrapper d_mob_none">
+                            <a href="cart.html" class="main__link__grey account_link"> 
+                                العربية
+                            </a>
+                            <span class="lang-divider"></span>
+                            <div class="account__des dropdown">
+                                <a class="account_link dropdown-toggle" href="#" id="dropthree" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="welcome__wrapper">
+                                        <span class="welcome__name ">Sign In</span>
+                                        <span>My Account</span>
+                                    </div>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropthree">
+                                    <a class="dropdown-item" href="login_en.html">Sign In</a>
+                                    <a class="dropdown-item" href="signup_en.html">Sign Up</a>
+                                </div>
+                            </div>
+                            <span class="lang-divider"></span>
+                            <a href="javascript:void(0)" onclick="window.tokiCart.open()" class="main__link__grey account_link"> 
+                                <span class="p__relative">
+                                    <i class="bag__icon"></i>
+                                    <span class="num-cart">0</span>
+                                </span>
+                                Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Main View -->
+    <div class="container cart-page-wrap">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="cart-card">
+                    <h2 class="cart-page-title">
+                        <i class="fa-solid fa-bag-shopping text-warning"></i> Items in Your Cart
+                    </h2>
+                    <div id="fullCartList">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <div class="summary-card">
+                    <h3 class="summary-title">Order Summary</h3>
+                    <div class="toki-cart-summary-row">
+                        <span>Subtotal:</span>
+                        <span id="pageSubtotal">0.00 SAR</span>
+                    </div>
+                    <div class="toki-cart-summary-row">
+                        <span>Delivery Fee:</span>
+                        <span style="color: #27ae60; font-weight: bold;">Free</span>
+                    </div>
+                    <div class="toki-cart-summary-row">
+                        <span>VAT (15%):</span>
+                        <span>Included</span>
+                    </div>
+                    <div class="toki-cart-summary-row total">
+                        <span>Total:</span>
+                        <span class="price" id="pageTotal">0.00 SAR</span>
+                    </div>
+                    <button type="button" class="btn-toki-checkout mt-3" onclick="handleCheckout()">
+                        <i class="fa-solid fa-lock mr-2"></i> Proceed to Checkout
+                    </button>
+                    <div class="text-center mt-3">
+                        <a href="category_en.html" class="text-muted" style="font-size: 13px; text-decoration: none;">
+                            <i class="fa fa-arrow-left mr-1"></i> Continue Shopping
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: #fff; border-top: 1px solid #eee; padding: 25px 0; text-align: center; font-size: 14px; color: #777;">
+        All Rights Reserved © Toki Marketplace 2026
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        function renderFullCartPage() {
+            var items = window.tokiCart.get();
+            var $list = $('#fullCartList');
+
+            if (items.length === 0) {
+                $list.html(
+                    '<div class="toki-cart-empty">' +
+                        '<i class="fa-solid fa-basket-shopping"></i>' +
+                        '<h4>Your cart is empty</h4>' +
+                        '<p>You have not added any products to your cart yet.</p>' +
+                        '<a href="category_en.html" class="btn-shop-now">Shop Now</a>' +
+                    '</div>'
+                );
+                $('#pageSubtotal, #pageTotal').text('0.00 SAR');
+                return;
+            }
+
+            var html = '';
+            var total = 0;
+            items.forEach(function(item) {
+                var itemTotal = (parseFloat(item.price) * (item.qty || 1));
+                total += itemTotal;
+                html += 
+                    '<div class="toki-cart-item" style="padding: 18px 0;">' +
+                        '<img src="' + item.img + '" class="toki-cart-item-img" style="width: 85px; height: 85px;">' +
+                        '<div class="toki-cart-item-info mr-3">' +
+                            '<h4 class="toki-cart-item-title" style="font-size: 16px;">' + item.title + '</h4>' +
+                            '<div class="toki-cart-item-price" style="font-size: 17px;">' + parseFloat(item.price).toFixed(2) + ' SAR</div>' +
+                            '<div class="toki-cart-item-controls mt-2">' +
+                                '<div class="toki-qty-btn-group">' +
+                                    '<button class="toki-qty-btn" onclick="updatePageQty(\'' + item.id + '\', -1)">-</button>' +
+                                    '<span class="toki-qty-val">' + (item.qty || 1) + '</span>' +
+                                    '<button class="toki-qty-btn" onclick="updatePageQty(\'' + item.id + '\', 1)">+</button>' +
+                                '</div>' +
+                                '<button class="toki-item-remove" onclick="removePageItem(\'' + item.id + '\')">' +
+                                    '<i class="fa-regular fa-trash-can"></i> Remove Item' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+            });
+
+            $list.html(html);
+            $('#pageSubtotal, #pageTotal').text(total.toFixed(2) + ' SAR');
+        }
+
+        function updatePageQty(id, delta) {
+            window.tokiCart.updateQty(id, delta);
+            renderFullCartPage();
+        }
+
+        function removePageItem(id) {
+            window.tokiCart.remove(id);
+            renderFullCartPage();
+        }
+
+        function handleCheckout() {
+            var items = window.tokiCart.get();
+            if (items.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Thank you! Your order has been placed successfully on Toki Marketplace.');
+            window.tokiCart.clear();
+            renderFullCartPage();
+        }
+
+        $(document).ready(function() {
+            renderFullCartPage();
+        });
+    </script>
+</body>
+</html>
