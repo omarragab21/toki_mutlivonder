@@ -1,0 +1,7 @@
+# Ignore WordPress files & large archives for Vercel static deployments
+toki 2/
+*.zip
+*.fig
+*.fig.zip
+*.sql
+.git
