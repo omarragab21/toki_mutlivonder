@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - متجر توكي Toki</title>
+    <link href="img/logo.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="css/animate.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/style-ar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f4f5f7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .auth-container {
+            max-width: 480px;
+            width: 92%;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 36px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #ebebeb;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .auth-header .auth-logo {
+            max-width: 140px;
+            margin-bottom: 18px;
+        }
+        .auth-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .auth-header p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        .auth-tabs {
+            display: flex;
+            background: #f0f1f4;
+            border-radius: 10px;
+            padding: 4px;
+            margin-bottom: 25px;
+        }
+        .auth-tab-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .auth-tab-btn.active {
+            background: #ffffff;
+            color: #fa5000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .form-group-custom {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-group-custom label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .input-icon-wrap {
+            position: relative;
+        }
+        .input-icon-wrap i.field-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 16px;
+        }
+        .input-icon-wrap .toggle-password {
+            position: absolute;
+            left: 15px;
+            right: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .input-icon-wrap input {
+            width: 100%;
+            height: 48px;
+            padding: 0 45px 0 45px;
+            border: 1.5px solid #e2e4e8;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .input-icon-wrap input:focus {
+            border-color: #fa5000;
+            box-shadow: 0 0 0 3px rgba(250, 80, 0, 0.12);
+        }
+        .auth-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+        .auth-options a {
+            color: #fa5000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .auth-options a:hover {
+            text-decoration: underline;
+        }
+        .btn-auth-submit {
+            width: 100%;
+            height: 48px;
+            background: linear-gradient(135deg, #ff6a00 0%, #fa5000 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(250, 80, 0, 0.3);
+        }
+        .btn-auth-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(250, 80, 0, 0.4);
+        }
+        .auth-divider {
+            text-align: center;
+            position: relative;
+            margin: 25px 0;
+        }
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e8e8e8;
+        }
+        .auth-divider span {
+            background: #fff;
+            padding: 0 15px;
+            position: relative;
+            font-size: 13px;
+            color: #888;
+        }
+        .social-auth-btns {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .btn-social {
+            flex: 1;
+            height: 44px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-social:hover {
+            background: #f9f9f9;
+            border-color: #ccc;
+            color: #111;
+        }
+        .auth-footer-text {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+        .auth-footer-text a {
+            color: #fa5000;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .auth-footer-text a:hover {
+            text-decoration: underline;
+        }
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+        .back-home-link:hover {
+            color: #fa5000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Simple Top Bar -->
+    <div style="background: #fa5000; padding: 12px 0; text-align: center;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="d-flex align-items-center text-white" style="text-decoration: none; font-size: 14px; font-weight: bold;">
+                <i class="fa fa-arrow-right ml-2"></i> العودة للمتجر
+            </a>
+            <a href="index.html">
+                <img src="img/logo.png" alt="Toki" style="height: 35px; filter: brightness(0) invert(1);">
+            </a>
+            <a href="login_en.html" class="text-white" style="text-decoration: none; font-size: 13px;">
+                English
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Auth Container -->
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-header">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Toki Store" class="auth-logo">
+                </a>
+                <h2>مرحباً بعودتك!</h2>
+                <p>سجل دخولك لمتابعة التسوق ومتابعة طلباتك</p>
+            </div>
+
+            <!-- Role Tabs -->
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" onclick="setRole('customer', this)">عميل</button>
+                <button type="button" class="auth-tab-btn" onclick="setRole('vendor', this)">تاجر</button>
+                <button type="button" class="auth-tab-btn" onclick="setRole('courier', this)">مندوب توكي</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group-custom">
+                    <label>البريد الإلكتروني أو رقم الجوال</label>
+                    <div class="input-icon-wrap">
+                        <i class="fa-regular fa-envelope field-icon"></i>
+                        <input type="text" id="loginUsername" placeholder="مثال: user@toki.com أو 05xxxxxxxx" required value="عبد الله محمد">
+                    </div>
+                </div>
+
+                <div class="form-group-custom">
+                    <label>كلمة المرور</label>
+                    <div class="input-icon-wrap">
+                        <i class="fa-solid fa-lock field-icon"></i>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required value="password123">
+                        <i class="fa-regular fa-eye toggle-password" onclick="togglePass('loginPassword', this)"></i>
+                    </div>
+                </div>
+
+                <div class="auth-options">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; margin: 0;">
+                        <input type="checkbox" checked> تذكرني
+                    </label>
+                    <a href="#">نسيت كلمة المرور؟</a>
+                </div>
+
+                <button type="submit" class="btn-auth-submit" id="submitBtn">
+                    تسجيل الدخول <i class="fa-solid fa-arrow-left mr-2"></i>
+                </button>
+            </form>
+
+            <div class="auth-divider">
+                <span>أو تسجيل الدخول بواسطة</span>
+            </div>
+
+            <div class="social-auth-btns">
+                <a href="#" class="btn-social" onclick="socialLogin('Google')">
+                    <i class="fa-brands fa-google text-danger"></i> Google
+                </a>
+                <a href="#" class="btn-social" onclick="socialLogin('Apple')">
+                    <i class="fa-brands fa-apple text-dark"></i> Apple
+                </a>
+            </div>
+
+            <div class="auth-footer-text">
+                ليس لديك حساب بعد؟ <a href="signup.html">إنشاء حساب جديد</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <div style="background: #fff; border-top: 1px solid #eee; padding: 18px 0; text-align: center; font-size: 13px; color: #888;">
+        جميع الحقوق محفوظة © متجر توكي Toki 2026
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        let currentRole = 'customer';
+
+        function setRole(role, btn) {
+            currentRole = role;
+            $('.auth-tab-btn').removeClass('active');
+            $(btn).addClass('active');
+        }
+
+        function togglePass(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                $(icon).removeClass('fa-eye').addClass('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                $(icon).removeClass('fa-eye-slash').addClass('fa-eye');
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value.trim() || 'عبد الله';
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> جاري تسجيل الدخول...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                // Save user session
+                const user = {
+                    name: username,
+                    role: currentRole,
+                    loggedIn: true,
+                    loginTime: new Date().toISOString()
+                };
+                localStorage.setItem('toki_user', JSON.stringify(user));
+                window.location.href = 'index.html';
+            }, 600);
+        }
+
+        function socialLogin(provider) {
+            const user = {
+                name: 'عبد الله محمد',
+                provider: provider,
+                role: currentRole,
+                loggedIn: true,
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem('toki_user', JSON.stringify(user));
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -11,10 +11,10 @@
     { "source": "/product.html", "destination": "/product_details.html" },
     { "source": "/product_en", "destination": "/product_details_en.html" },
     { "source": "/product_en.html", "destination": "/product_details_en.html" },
-    { "source": "/product_details", "destination": "/product_details.html" },
-    { "source": "/product_details_en", "destination": "/product_details_en.html" },
-    { "source": "/category", "destination": "/category.html" },
-    { "source": "/category_en", "destination": "/category_en.html" }
+    { "source": "/signin", "destination": "/login.html" },
+    { "source": "/register", "destination": "/signup.html" },
+    { "source": "/signin_en", "destination": "/login_en.html" },
+    { "source": "/register_en", "destination": "/signup_en.html" }
   ],
   "headers": [
     {
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "source": "/(css|js|img|fonts)/(.*)",
+      "source": "/(css|js|img|fonts|Toki/css|Toki/js|Toki/img|Toki/fonts)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
